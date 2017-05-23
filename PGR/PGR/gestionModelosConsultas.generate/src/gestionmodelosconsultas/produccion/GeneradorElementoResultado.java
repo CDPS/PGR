@@ -217,25 +217,46 @@ public class GeneradorElementoResultado {
 		for(String[] campoTemp: campos){
 			
 			if(campoTemp[0].equals("ID")){
-				transaccion.setID(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					transaccion.setID(new Integer(campoTemp[1]));
+				else
+					transaccion.setID(0);
 			}
 			if(campoTemp[0].equals("ESTADO_TRANSACCION")){
-				transaccion.setESTADO_TRANSACCION(campoTemp[1]);
+				if(campoTemp[1] != null)
+					transaccion.setESTADO_TRANSACCION(campoTemp[1]);
+				else
+					transaccion.setESTADO_TRANSACCION("");
 			}
 			if(campoTemp[0].equals("HORA")){
-				transaccion.setHORA(new Integer(campoTemp[1]) );
+				if(campoTemp[1] != null)
+					transaccion.setHORA(new Integer(campoTemp[1]));
+				else
+					transaccion.setHORA(0);
 			}
 			if(campoTemp[0].equals("TIPO")){
-				transaccion.setTIPO(campoTemp[1]);
+				if(campoTemp[1] != null)
+					transaccion.setTIPO(campoTemp[1]);
+				else
+					transaccion.setTIPO("");
 			}
 			if(campoTemp[0].equals("DESCRIPCION")){
-				transaccion.setDESCRIPCION(campoTemp[1]);
+				if(campoTemp[1] != null)
+					transaccion.setDESCRIPCION(campoTemp[1]);
+				else
+					transaccion.setDESCRIPCION("");
 			}
 			if(campoTemp[0].equals("CATEGORIA")){
-				transaccion.setCATEGORIA(campoTemp[1]);
+				if(campoTemp[1] != null)
+					transaccion.setCATEGORIA(campoTemp[1]);
+				else
+					transaccion.setCATEGORIA("");
 			}
 			if(campoTemp[0].equals("VALOR")){
-				transaccion.setVALOR(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					transaccion.setVALOR(new Integer(campoTemp[1]));
+				else
+					transaccion.setVALOR(0);
 			}
 		}
 		return transaccion;
@@ -245,10 +266,16 @@ public class GeneradorElementoResultado {
 		// TODO Auto-generated method stub
 		for(String[] campoTemp: campos){
 			if(campoTemp[0].equals("ID")){
-				trama.setID(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					trama.setID(new Integer(campoTemp[1]));
+				else
+					trama.setID(0);
 			}
 			if(campoTemp[0].equals("CADENA_TRAMA")){
-				trama.setCADENA_TRAMA(campoTemp[1]);
+				if(campoTemp[1] != null)
+					trama.setCADENA_TRAMA(campoTemp[1]);
+				else
+					trama.setCADENA_TRAMA("");
 			}
 		}
 		return trama;
@@ -260,67 +287,103 @@ public class GeneradorElementoResultado {
 		for(String[] campoTemp: campos){
 			
 			if(campoTemp[0].equals("ID")){
-				planilla.setID(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					planilla.setID(new Integer(campoTemp[1]));
+				else
+					planilla.setID(0);
 			}
-			
 			if(campoTemp[0].equals("NUMERO_MOVIL")){
-				planilla.setNUMERO_MOVIL(campoTemp[1]);
+				if(campoTemp[1] != null)
+					planilla.setNUMERO_MOVIL(campoTemp[1]);
+				else
+					planilla.setNUMERO_MOVIL("");
 			}
-			
 			if(campoTemp[0].equals("FECHA")){
-				planilla.setFECHA(campoTemp[1]);
+				if(campoTemp[1] != null)
+					planilla.setFECHA(campoTemp[1]);
+				else
+					planilla.setFECHA("");
 			}
-					
 			if(campoTemp[0].equals("CEDULA_CONDUCTOR")){
-				planilla.setCEDULA_CONDUCTOR(campoTemp[1]);
+				if(campoTemp[1] != null)
+					planilla.setCEDULA_CONDUCTOR(campoTemp[1]);
+				else
+					planilla.setCEDULA_CONDUCTOR("");
 			}
-			
 			if(campoTemp[0].equals("CONDUCTOR")){
-				planilla.setCONDUCTOR(campoTemp[1]);
+				if(campoTemp[1] != null)
+					planilla.setCONDUCTOR(campoTemp[1]);
+				else
+					planilla.setCONDUCTOR("");
 			}
-			
 			if(campoTemp[0].equals("TOTAL")){
-				planilla.setTOTAL(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					planilla.setTOTAL(new Integer(campoTemp[1]));
+				else
+					planilla.setTOTAL(0);
 			}
-			
 			if(campoTemp[0].equals("TOTAL_RECAUDO_BRUTO")){
-				planilla.setTOTAL_RECAUDO_BRUTO(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					planilla.setTOTAL_RECAUDO_BRUTO(new Integer(campoTemp[1]));
+				else
+					planilla.setTOTAL_RECAUDO_BRUTO(0);
 			}
-			
 			if(campoTemp[0].equals("TOTAL_RECAUDO_NETO")){
-				planilla.setTOTAL_RECAUDO_NETO(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					planilla.setTOTAL_RECAUDO_NETO(new Integer(campoTemp[1]));
+				else
+					planilla.setTOTAL_RECAUDO_NETO(0);
 			}
-			
 			if(campoTemp[0].equals("TOTAL_DEPOSITO")){
-				planilla.setTOTAL_DEPOSITO(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					planilla.setTOTAL_DEPOSITO(new Integer(campoTemp[1]));
+				else
+					planilla.setTOTAL_DEPOSITO(0);
 			}
-			
 			if(campoTemp[0].equals("TOTAL_GASTOS")){
-				planilla.setTOTAL_GASTOS(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					planilla.setTOTAL_GASTOS(new Integer(campoTemp[1]));
+				else
+					planilla.setTOTAL_GASTOS(0);
 			}
-			
 			if(campoTemp[0].equals("LIQUIDADO")){
-				planilla.setLIQUIDADO(new Boolean(campoTemp[1]));
+				if(campoTemp[1] != null) {
+					if(campoTemp[1].equals("0"))
+						planilla.setLIQUIDADO(false);
+					else
+						planilla.setLIQUIDADO(true);	
+				} else
+					planilla.setLIQUIDADO(false);
 			}
-			
 			if(campoTemp[0].equals("USUARIO")){
-				planilla.setUSUARIO(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					planilla.setUSUARIO(new Integer(campoTemp[1]));
+				else
+					planilla.setUSUARIO(0);
 			}
-			
 			if(campoTemp[0].equals("NOMBRE_PERSONA")){
-				planilla.setNOMBRE_PERSONA(campoTemp[1]);
+				if(campoTemp[1] != null)
+					planilla.setNOMBRE_PERSONA(campoTemp[1]);
+				else
+					planilla.setNOMBRE_PERSONA("");
 			}
-			
 			if(campoTemp[0].equals("APELLIDO")){
-				planilla.setAPELLIDO(campoTemp[1]);
+				if(campoTemp[1] != null)
+					planilla.setAPELLIDO(campoTemp[1]);
+				else
+					planilla.setAPELLIDO("");
 			}
-			
 			if(campoTemp[0].equals("CEDULA")){
-				planilla.setCEDULA(campoTemp[1]);
+				if(campoTemp[1] != null)
+					planilla.setCEDULA(campoTemp[1]);
+				else
+					planilla.setCEDULA("");
 			}
-			
 			if(campoTemp[0].equals("HORA_MODIFICACION")){
-				planilla.setHORA_MODIFICACION(campoTemp[1]);
+				if(campoTemp[1] != null)
+					planilla.setHORA_MODIFICACION(campoTemp[1]);
+				else
+					planilla.setHORA_MODIFICACION("");
 			}
 		}
 		return planilla;
@@ -330,24 +393,42 @@ public class GeneradorElementoResultado {
 	private Detallado crearDetallado(ArrayList<String[]> campos, Detallado detallado) {
 		// TODO Auto-generated method stub
 		for(String[] campoTemp: campos){
-			
 			if(campoTemp[0].equals("ID")){
-				detallado.setID(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					detallado.setID(new Integer(campoTemp[1]));
+				else
+					detallado.setID(0);
 			}
 			if(campoTemp[0].equals("NOMBRE")){
-				detallado.setNOMBRE(campoTemp[1]);
+				if(campoTemp[1] != null)
+					detallado.setNOMBRE(campoTemp[1]);
+				else
+					detallado.setNOMBRE("");
 			}
 			if(campoTemp[0].equals("REGISTRO")){
-				detallado.setREGISTRO(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					detallado.setREGISTRO(new Integer(campoTemp[1]));
+				else {
+					detallado.setREGISTRO(0);
+				}
 			}
 			if(campoTemp[0].equals("TOTAL_RECAUDO_TARIFA")){
-				detallado.setTOTAL_RECAUDO_TARIFA(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					detallado.setTOTAL_RECAUDO_TARIFA(new Integer(campoTemp[1]));
+				else
+					detallado.setTOTAL_RECAUDO_TARIFA(0);
 			}
 			if(campoTemp[0].equals("REGISTRO_RECAUDO")){
-				detallado.setREGISTRO_RECAUDO(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					detallado.setREGISTRO_RECAUDO(new Integer(campoTemp[1]));
+				else
+					detallado.setREGISTRO_RECAUDO(0);
 			}
 			if(campoTemp[0].equals("COSTO_TARIFA")){
-				detallado.setCOSTO_TARIFA(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					detallado.setCOSTO_TARIFA(new Integer(campoTemp[1]));
+				else
+					detallado.setCOSTO_TARIFA(0);
 			}
 		}
 		return detallado;
@@ -356,16 +437,23 @@ public class GeneradorElementoResultado {
 	private Propietario crearPropietario(ArrayList<String[]> campos, Propietario propietario) {
 		// TODO Auto-generated method stub
 		for(String[] campoTemp: campos){
-			
 			if(campoTemp[0].equals("ID")){
-				propietario.setID(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					propietario.setID(new Integer(campoTemp[1]));
+				else
+					propietario.setID(0);
 			}
 			if(campoTemp[0].equals("NOMBRE")){
-				propietario.setNOMBRE(campoTemp[1]);
+				if(campoTemp[1] != null)
+					propietario.setNOMBRE(campoTemp[1]);
+				else
+					propietario.setNOMBRE("");
 			}
-			
 			if(campoTemp[0].equals("CEDULA")){
-				propietario.setCEDULA(campoTemp[1]);
+				if(campoTemp[1] != null)
+					propietario.setCEDULA(campoTemp[1]);
+				else
+					propietario.setCEDULA("");
 			}
 		}
 		return propietario;
@@ -374,38 +462,54 @@ public class GeneradorElementoResultado {
 	private Consolidado crearConsolidado(ArrayList<String[]> campos, Consolidado consolidado) {
 		// TODO Auto-generated method stub
 		for(String[] campoTemp: campos){
-			
 			if(campoTemp[0].equals("ID")){
-				consolidado.setID(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					consolidado.setID(new Integer(campoTemp[1]));
+				else
+					consolidado.setID(0);
 			}
-			
 			if(campoTemp[0].equals("RUTA_DESPACHO")){
-				consolidado.setRUTA_DESPACHO(campoTemp[1]);
+				if(campoTemp[1] != null)
+					consolidado.setRUTA_DESPACHO(campoTemp[1]);
+				else
+					consolidado.setRUTA_DESPACHO("");
 			}
-			
 			if(campoTemp[0].equals("HORA_DESPACHO")){
-				consolidado.setHORA_DESPACHO(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					consolidado.setHORA_DESPACHO(new Integer(campoTemp[1]));
+				else
+					consolidado.setHORA_DESPACHO(0);
 			}
-			
 			if(campoTemp[0].equals("REGISTRO_CONSOLIDADO")){
-				consolidado.setREGISTRO_CONSOLIDADO(campoTemp[1]);
+				if(campoTemp[1] != null)
+					consolidado.setREGISTRO_CONSOLIDADO(campoTemp[1]);
+				else
+					consolidado.setREGISTRO_CONSOLIDADO("");
 			}
-			
 			if(campoTemp[0].equals("TOTAL_RECAUDO_BRUTO")){
-				consolidado.setTOTAL_RECAUDO_BRUTO(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					consolidado.setTOTAL_RECAUDO_BRUTO(new Integer(campoTemp[1]));
+				else
+					consolidado.setTOTAL_RECAUDO_BRUTO(0);
 			}
-			
 			if(campoTemp[0].equals("TOTAL_RECAUDO_DESPACHO")){
-				consolidado.setTOTAL_RECAUDO_DESPACHO(new Integer(campoTemp[1]));
+				if(campoTemp[1] != null)
+					consolidado.setTOTAL_RECAUDO_DESPACHO(new Integer(campoTemp[1]));
+				else
+					consolidado.setTOTAL_RECAUDO_DESPACHO(0);
 			}
-			
 			if(campoTemp[0].equals("ESTADO_CONSOLIDADO")){
-				consolidado.setESTADO_CONSOLIDADO(campoTemp[1]);
+				if(campoTemp[1] != null)
+					consolidado.setESTADO_CONSOLIDADO(campoTemp[1]);
+				else
+					consolidado.setESTADO_CONSOLIDADO("");
 			}
 			if(campoTemp[0].equals("ESTADO_IMPRESION")){
-				consolidado.setESTADO_IMPRESION(campoTemp[1]);
+				if(campoTemp[1] != null)
+					consolidado.setESTADO_IMPRESION(campoTemp[1]);
+				else
+					consolidado.setESTADO_IMPRESION("");
 			}
-			
 		}
 		return consolidado;
 	}

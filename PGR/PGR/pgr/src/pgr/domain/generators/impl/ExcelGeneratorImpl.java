@@ -1716,7 +1716,8 @@ public class ExcelGeneratorImpl extends MinimalEObjectImpl.Container implements 
 		org.apache.poi.ss.usermodel.Name name = null;
 
 		name = workbook.createName();
-		String replaceAll = ((String) namesFilters.get(0) + "s").replaceAll(" ", "_");
+		//TODO
+		String replaceAll = validationNames((String) namesFilters.get(0) + "s");
 		name.setNameName(replaceAll);
 		String colIni = getNumToCol(0);
 		XSSFSheet sheet2 = workbook.getSheet("Datos");
@@ -1771,7 +1772,10 @@ public class ExcelGeneratorImpl extends MinimalEObjectImpl.Container implements 
 				j++;
 			}
 			name = sheet.getWorkbook().createName();
-			name.setNameName(key.replaceAll(" ", "_"));
+			//TODO
+			System.out.println(key);
+			System.out.println(validationNames(key));
+			name.setNameName(validationNames(key));
 			String colIni = getNumToCol(0);
 			String colFin = getNumToCol(j - 1);
 			name.setRefersToFormula(
@@ -1787,15 +1791,19 @@ public class ExcelGeneratorImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public void setIndirect() {
-
+		//TODO
 		org.apache.poi.ss.usermodel.DataValidationHelper helper = sheet.getDataValidationHelper();
 		org.apache.poi.ss.usermodel.DataValidationConstraint constraint = null;
 		org.apache.poi.ss.usermodel.DataValidation validation = null;
 		for (int i = 1; i < posFilters.size(); i++) {
 			String cell = getNumToCol(((pgr.domain.util.impl.CoordinateImpl) posFilters.get(i - 1)).getY());
-			constraint = helper.createFormulaListConstraint("INDIRECT(SUBSTITUTE(" + sheet.getSheetName() + "!$" + cell
+			String cadena =  "CONCATENATE(\" \"," + sheet.getSheetName() + "!$" + cell
 					+ "$" + (((pgr.domain.util.impl.CoordinateImpl) posFilters.get(i - 1)).getX() + 1)
-					+ ",\" \", \"_\"))");
+					+ ")";
+			constraint = helper.createFormulaListConstraint("INDIRECT("
+					+ "SUBSTITUTE("+ "SUBSTITUTE("+ "SUBSTITUTE("+cadena+ ", \" \",\"_\"),"
+					+ "\"-\", \"_\"),\"/\",\"_\")"
+					+ ")");
 			validation = helper.createValidation(constraint,
 					new org.apache.poi.ss.util.CellRangeAddressList(
 							((pgr.domain.util.impl.CoordinateImpl) posFilters.get(i)).getX(),
@@ -1833,10 +1841,22 @@ public class ExcelGeneratorImpl extends MinimalEObjectImpl.Container implements 
 		org.apache.poi.ss.usermodel.Name name = null;
 		for (int i = 0; i < names.size(); i++) {
 			name = workbook.createName();
-			name.setNameName(((String) names.get(i)).replaceAll(" ", "_"));
+			//TODO
+			name.setNameName(validationNames((String) names.get(i)));
 			name.setRefersToFormula("ResultSet[" + names.get(i) + "]");
 		}
 	}
+	
+	//TODO
+	public String validationNames(String name){
+		//TODO
+		String alphaOnly;
+			name = " "+name;
+			alphaOnly = name.replaceAll("[^\\p{Alpha}\\p{Digit}]+","_");
+			return alphaOnly;
+		}
+		
+		
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1866,7 +1886,7 @@ public class ExcelGeneratorImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	public void theFormula(final int targetRow, final int targetCell, final int countRow, final int countCell,
 			final Integer firstCellFilter, final int sizeX, final int sizeY) {
-
+		//TODO
 		String sheet1 = sheet.getSheetName();
 		String sheet2 = dataSheet.getSheetName();
 
@@ -1875,21 +1895,24 @@ public class ExcelGeneratorImpl extends MinimalEObjectImpl.Container implements 
 				String filas = "ROWS(" + sheet1 + "!" + getNumToCol(targetCell + j) + "$" + targetRow + ":" + sheet1
 						+ "!" + getNumToCol(targetCell + j) + (targetRow + i) + ")";
 				int n = namesFilters.size();
-				String constraint = "((" + ((String) namesFilters.get(n - 1)).replaceAll(" ", "_") + "=$"
+				//TODO
+				String constraint = "((" + validationNames((String) namesFilters.get(n - 1)) + "=$"
 						+ getNumToCol(((pgr.domain.util.impl.CoordinateImpl) posFilters.get(n - 1)).getY()) + "$"
 						+ (((pgr.domain.util.impl.CoordinateImpl) posFilters.get(n - 1)).getX() + 1) + ")";
 				for (int k = n - 2; k >= 0; k--) {
-					constraint += "*(" + ((String) namesFilters.get(k)).replaceAll(" ", "_") + "=$"
+					//TODO
+					constraint += "*(" + validationNames((String) namesFilters.get(k)) + "=$"
 							+ getNumToCol(((pgr.domain.util.impl.CoordinateImpl) posFilters.get(k)).getY()) + "$"
 							+ (((pgr.domain.util.impl.CoordinateImpl) posFilters.get(k)).getX() + 1) + ")";
 				}
 				constraint += ")";
+				//TODO
 				String si = "IF(" + constraint + ",ROW("
-						+ ((String) namesFilters.get(namesFilters.size() - 1)).replaceAll(" ", "_") + ")-ROW(" + sheet2
+						+ validationNames((String) namesFilters.get(namesFilters.size() - 1)) + ")-ROW(" + sheet2
 						+ "!$" + getNumToCol(firstCellFilter) + "$" + firstRowFilter + ")+1)";
 				String formula = "IF(" + filas + "<=" + newDataSheet.getSheetName() + "!$" + getNumToCol(countCell)
-						+ "$" + (countRow + 1) + ",INDEX(INDIRECT(SUBSTITUTE(" + getNumToCol(targetCell + j) + "$"
-						+ (targetRow - 1) + ",\" \",\"_\")),SMALL(" + si + "," + filas + ")),\"\")";
+						+ "$" + (countRow + 1) + ",INDEX(INDIRECT(SUBSTITUTE(CONCATENATE(\"_\"," + getNumToCol(targetCell + j) + "$"
+						+ (targetRow - 1) + "),\" \",\"_\")),SMALL(" + si + "," + filas + ")),\"\")";
 				sheet.setArrayFormula(formula, new org.apache.poi.ss.util.CellRangeAddress((targetRow + i) - 1,
 						(targetRow + i) - 1, targetCell + j, targetCell + j));
 			}
