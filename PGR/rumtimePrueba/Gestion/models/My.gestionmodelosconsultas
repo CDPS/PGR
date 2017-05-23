@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gestionmodelosconsultas:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gestionmodelosconsultas="http:///gestionmodelosconsultas.ecore" xmlns:gestionmodelosconsultas.modeloconsultas.cotracir="http:///gestionmodelosconsultas/modeloconsultas/cotracir.ecore" xmlns:gestionmodelosconsultas.modeloconsultas.model="http:///gestionmodelosconsultas/modeloconsultas/model.ecore">
+  <factoryModeloConsultas>
+    <listModeloConsulta>
+      <listEADiagram xsi:type="gestionmodelosconsultas.modeloconsultas.model:Proyeccion">
+        <listElementoConsulta xsi:type="gestionmodelosconsultas.modeloconsultas.cotracir:Planilla">
+          <listCampos nombreCampo="TOTAL_DEPOSITO" criterio=""/>
+        </listElementoConsulta>
+        <listElementoConsulta xsi:type="gestionmodelosconsultas.modeloconsultas.cotracir:Trama">
+          <listCampos nombreCampo="CADENA_TRAMA"/>
+        </listElementoConsulta>
+      </listEADiagram>
+    </listModeloConsulta>
+  </factoryModeloConsultas>
+</gestionmodelosconsultas:ModelFactory>

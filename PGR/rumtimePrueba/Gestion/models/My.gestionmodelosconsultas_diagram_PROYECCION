@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gestionmodelosconsultas.modeloconsultas.cotracir="http:///gestionmodelosconsultas/modeloconsultas/cotracir.ecore" xmlns:gestionmodelosconsultas.modeloconsultas.model="http:///gestionmodelosconsultas/modeloconsultas/model.ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xsi:schemaLocation="http:///gestionmodelosconsultas/modeloconsultas/cotracir.ecore http:///gestionmodelosconsultas.ecore#//modeloconsultas/cotracir http:///gestionmodelosconsultas/modeloconsultas/model.ecore http:///gestionmodelosconsultas.ecore#//modeloconsultas/model" xmi:id="_UgETED6ZEeexKs85xwLP7A" type="GestionModelosConsultas_PROYECCION" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_pa5aUD6xEeeT5obzv6nYcw" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_pa6BYD6xEeeT5obzv6nYcw" type="5006"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_pa6BYT6xEeeT5obzv6nYcw" type="7003">
+      <children xmi:type="notation:Node" xmi:id="_qV3NwD6xEeeT5obzv6nYcw" type="3003">
+        <children xmi:type="notation:DecorationNode" xmi:id="_qV301D6xEeeT5obzv6nYcw" type="5005"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_qV300D6xEeeT5obzv6nYcw"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_qV300T6xEeeT5obzv6nYcw" fontName="Segoe UI"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_qV300j6xEeeT5obzv6nYcw"/>
+        <element xmi:type="gestionmodelosconsultas.modeloconsultas.model:Campo" href="My.gestionmodelosconsultas#//@factoryModeloConsultas/@listModeloConsulta.0/@listEADiagram.0/@listElementoConsulta.0/@listCampos.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qV300z6xEeeT5obzv6nYcw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_pa6BYj6xEeeT5obzv6nYcw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_pa6BYz6xEeeT5obzv6nYcw"/>
+    </children>
+    <element xmi:type="gestionmodelosconsultas.modeloconsultas.cotracir:Planilla" href="My.gestionmodelosconsultas#//@factoryModeloConsultas/@listModeloConsulta.0/@listEADiagram.0/@listElementoConsulta.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pa5aUT6xEeeT5obzv6nYcw" x="105" y="100" width="176" height="86"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_syfoQD6xEeeT5obzv6nYcw" type="2005" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_sygPUD6xEeeT5obzv6nYcw" type="5010"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_sygPUT6xEeeT5obzv6nYcw" type="7005">
+      <children xmi:type="notation:Node" xmi:id="_tgCqwD6xEeeT5obzv6nYcw" type="3005">
+        <children xmi:type="notation:DecorationNode" xmi:id="_tgCqxT6xEeeT5obzv6nYcw" type="5009"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_tgCqwT6xEeeT5obzv6nYcw"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_tgCqwj6xEeeT5obzv6nYcw" fontName="Segoe UI"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_tgCqwz6xEeeT5obzv6nYcw"/>
+        <element xmi:type="gestionmodelosconsultas.modeloconsultas.model:Campo" href="My.gestionmodelosconsultas#//@factoryModeloConsultas/@listModeloConsulta.0/@listEADiagram.0/@listElementoConsulta.1/@listCampos.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tgCqxD6xEeeT5obzv6nYcw"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_sygPUj6xEeeT5obzv6nYcw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_sygPUz6xEeeT5obzv6nYcw"/>
+    </children>
+    <element xmi:type="gestionmodelosconsultas.modeloconsultas.cotracir:Trama" href="My.gestionmodelosconsultas#//@factoryModeloConsultas/@listModeloConsulta.0/@listEADiagram.0/@listElementoConsulta.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_syfoQT6xEeeT5obzv6nYcw" x="430" y="105" width="121" height="61"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_UgETET6ZEeexKs85xwLP7A"/>
+  <element xmi:type="gestionmodelosconsultas.modeloconsultas.model:Proyeccion" href="My.gestionmodelosconsultas#//@factoryModeloConsultas/@listModeloConsulta.0/@listEADiagram.0"/>
+</notation:Diagram>

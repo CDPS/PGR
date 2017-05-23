@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated gestionModelosConsultas -->
+      <package
+            uri="http:///gestionmodelosconsultas.ecore"
+            class="gestionmodelosconsultas.GestionmodelosconsultasPackage"
+            genModel="model/gestionModelosConsultas.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated gestionModelosConsultas -->
+      <package
+            uri="http:///gestionmodelosconsultas/rules/factoryrules.ecore"
+            class="gestionmodelosconsultas.rules.factoryrules.FactoryrulesPackage"
+            genModel="model/gestionModelosConsultas.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated gestionModelosConsultas -->
+      <package
+            uri="http:///gestionmodelosconsultas/entitymodel.ecore"
+            class="gestionmodelosconsultas.entitymodel.EntitymodelPackage"
+            genModel="model/gestionModelosConsultas.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated gestionModelosConsultas -->
+      <package
+            uri="http:///gestionmodelosconsultas/modeloconsultas.ecore"
+            class="gestionmodelosconsultas.modeloconsultas.ModeloconsultasPackage"
+            genModel="model/gestionModelosConsultas.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated gestionModelosConsultas -->
+      <package
+            uri="http:///gestionmodelosconsultas/modeloconsultas/model.ecore"
+            class="gestionmodelosconsultas.modeloconsultas.model.ModelPackage"
+            genModel="model/gestionModelosConsultas.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated gestionModelosConsultas -->
+      <package
+            uri="http:///gestionmodelosconsultas/modeloconsultas/resultset.ecore"
+            class="gestionmodelosconsultas.modeloconsultas.resultset.ResultsetPackage"
+            genModel="model/gestionModelosConsultas.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated gestionModelosConsultas -->
+      <package
+            uri="http:///gestionmodelosconsultas/modeloconsultas/resultset/resultcotracir.ecore"
+            class="gestionmodelosconsultas.modeloconsultas.resultset.resultcotracir.ResultcotracirPackage"
+            genModel="model/gestionModelosConsultas.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated gestionModelosConsultas -->
+      <package
+            uri="http:///gestionmodelosconsultas/modeloconsultas/cotracir.ecore"
+            class="gestionmodelosconsultas.modeloconsultas.cotracir.CotracirPackage"
+            genModel="model/gestionModelosConsultas.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated gestionModelosConsultas -->
+      <package
+            uri="http:///gestionmodelosconsultas/datatypes.ecore"
+            class="gestionmodelosconsultas.datatypes.DatatypesPackage"
+            genModel="model/gestionModelosConsultas.genmodel"/>
+   </extension>
+
+</plugin>

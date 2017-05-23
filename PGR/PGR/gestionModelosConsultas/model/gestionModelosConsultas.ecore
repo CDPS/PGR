@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gestionmodelosconsultas" nsURI="http:///gestionmodelosconsultas.ecore"
+    nsPrefix="gestionmodelosconsultas">
+  <eClassifiers xsi:type="ecore:EClass" name="ModelFactory">
+    <eOperations name="cargar" eType="#//ModelFactory">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="ModelFactory modelFactory = null;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI(&quot;platform:/resource/GestionConsultas/modelos/produccion.gestionmodelosconsultas&quot;);&#xD;&#xA;&#x9;&#x9;org.eclipse.emf.ecore.resource.ResourceSet resourceSet= new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();&#xD;&#xA;&#x9;&#x9;org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);&#xD;&#xA;&#x9;&#x9;try {&#xD;&#xA;&#x9;&#x9;&#x9;resource.load(java.util.Collections.EMPTY_MAP);&#xD;&#xA;&#x9;&#x9;&#x9;modelFactory = (ModelFactory) resource.getContents().get(0);&#xD;&#xA;&#x9;&#x9;} catch (java.io.IOException e) {&#xD;&#xA;&#x9;&#x9;&#x9;// TO-DO Auto-generated catch block&#xD;&#xA;&#x9;&#x9;&#x9;e.printStackTrace();&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return modelFactory;"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="salvar">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="ModelFactory modelFactory = this;&#xD;&#xA;&#x9;&#x9;  &#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;  org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI(&quot;platform:/resource/GestionConsultas/modelos/produccion.gestionmodelosconsultas&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;  org.eclipse.emf.ecore.resource.ResourceSet resourceSet= new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;  org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);&#xD;&#xA;&#x9;&#x9;  resource.getContents().add(modelFactory);&#xD;&#xA;&#x9;&#x9;  try {&#xD;&#xA;&#x9;&#x9;   resource.save(java.util.Collections.EMPTY_MAP);&#xD;&#xA;&#x9;&#x9;  } catch (java.io.IOException e) {&#xD;&#xA;&#x9;&#x9;   // TO-DO Auto-generated catch block&#xD;&#xA;&#x9;&#x9;   e.printStackTrace();&#xD;&#xA;&#x9;&#x9;  }&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;  return;"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rulesFactory" lowerBound="1"
+        eType="#//rules/factoryrules/RulesFactory" containment="true" eOpposite="#//rules/factoryrules/RulesFactory/ModelFactory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="factoryModeloConsultas"
+        lowerBound="1" eType="#//modeloconsultas/FactoryModeloConsulta" containment="true"
+        eOpposite="#//modeloconsultas/FactoryModeloConsulta/ModelFactory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diagramEntity" lowerBound="1"
+        eType="#//entitymodel/DiagramEntity" containment="true" eOpposite="#//entitymodel/DiagramEntity/ModelFactory"/>
+  </eClassifiers>
+  <eSubpackages name="rules" nsURI="http:///gestionmodelosconsultas/rules.ecore" nsPrefix="gestionmodelosconsultas.rules">
+    <eSubpackages name="factoryrules" nsURI="http:///gestionmodelosconsultas/rules/factoryrules.ecore"
+        nsPrefix="gestionmodelosconsultas.rules.factoryrules">
+      <eClassifiers xsi:type="ecore:EClass" name="RulesFactory">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ModelFactory" eType="#//ModelFactory"
+            transient="true" eOpposite="#//ModelFactory/rulesFactory"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="listRuleDiagramEntity"
+            upperBound="-1" eType="#//rules/factoryrules/Rule" containment="true"
+            eOpposite="#//rules/factoryrules/Rule/RulesFactory"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Rule">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="RulesFactory" eType="#//rules/factoryrules/RulesFactory"
+            transient="true" eOpposite="#//rules/factoryrules/RulesFactory/listRuleDiagramEntity"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="listChildRule" upperBound="-1"
+            eType="#//rules/factoryrules/ChildRule" containment="true" eOpposite="#//rules/factoryrules/ChildRule/Rule"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ChildRule" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="Rule" eType="#//rules/factoryrules/Rule"
+            transient="true" eOpposite="#//rules/factoryrules/Rule/listChildRule"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="EntityName" eSuperTypes="#//rules/factoryrules/ChildRule"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RelationName" eSuperTypes="#//rules/factoryrules/ChildRule"/>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="entitymodel" nsURI="http:///gestionmodelosconsultas/entitymodel.ecore"
+      nsPrefix="gestionmodelosconsultas.entitymodel">
+    <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//entitymodel/ModelElementEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByFactoryEntity"
+          eType="#//entitymodel/DiagramEntity" transient="true" eOpposite="#//entitymodel/DiagramEntity/listEntity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listAttributes" upperBound="-1"
+          eType="#//entitymodel/Attribute" containment="true" eOpposite="#//entitymodel/Attribute/Entity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EntityRelation" eSuperTypes="#//entitymodel/ModelElementEntity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="atributteForeingKeySource"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="atributtePrimaryKeyTarget"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicitySource" eType="#//entitymodel/Multiplicity"
+          defaultValueLiteral="many_to_one"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicityTarget" eType="#//entitymodel/Multiplicity"
+          defaultValueLiteral="one_to_many"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theFactoryEntity" eType="#//entitymodel/DiagramEntity"
+          transient="true" eOpposite="#//entitymodel/DiagramEntity/listEntityRelation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+          eType="#//entitymodel/Entity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+          eType="#//entitymodel/Entity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SimpleRelation" eSuperTypes="#//entitymodel/EntityRelation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AssociativeEntity" eSuperTypes="#//entitymodel/Entity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//entitymodel/Type"
+          defaultValueLiteral="string"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="visible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeType" eType="#//entitymodel/AttributeType"
+          defaultValueLiteral="ordinary"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Entity" eType="#//entitymodel/Entity"
+          transient="true" eOpposite="#//entitymodel/Entity/listAttributes"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ElementoRealizacionValueAttribute"
+          upperBound="-1" eType="#//entitymodel/ElementoRealizacionValueAttribute"
+          eOpposite="#//entitymodel/ElementoRealizacionValueAttribute/valueAttribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ElementoRealizacionVisibleAttribute"
+          upperBound="-1" eType="#//entitymodel/ElementoRealizacionVisibleAttribute"
+          eOpposite="#//entitymodel/ElementoRealizacionVisibleAttribute/visibleAttribute"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModelElementEntity" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ElementoRealizacionDiagramEntity"
+          upperBound="-1" eType="#//entitymodel/ElementoRealizacionDiagramEntity"
+          eOpposite="#//entitymodel/ElementoRealizacionDiagramEntity/modelElementEntity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="AttributeType">
+      <eLiterals name="primaryKey" value="1"/>
+      <eLiterals name="ordinary"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Multiplicity">
+      <eLiterals name="one_to_many" value="1"/>
+      <eLiterals name="many_to_one" value="2"/>
+      <eLiterals name="one_to_one" value="3"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DiagramEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ModelFactory" eType="#//ModelFactory"
+          transient="true" eOpposite="#//ModelFactory/diagramEntity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listEntity" upperBound="-1"
+          eType="#//entitymodel/Entity" containment="true" eOpposite="#//entitymodel/Entity/ownedByFactoryEntity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listEntityRelation" upperBound="-1"
+          eType="#//entitymodel/EntityRelation" containment="true" eOpposite="#//entitymodel/EntityRelation/theFactoryEntity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RealizacionDiagramEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ModeloConsulta" eType="#//modeloconsultas/ModeloConsulta"
+          transient="true" eOpposite="#//modeloconsultas/ModeloConsulta/realizacionDiagramEntity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listElementoRealizacionDiagramEntity"
+          upperBound="-1" eType="#//entitymodel/ElementoRealizacionDiagramEntity"
+          containment="true" eOpposite="#//entitymodel/ElementoRealizacionDiagramEntity/RealizacionDiagramEntity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="realizacionVisibleAttribute"
+          lowerBound="1" eType="#//entitymodel/ElementoRealizacionVisibleAttribute"
+          containment="true" eOpposite="#//entitymodel/ElementoRealizacionVisibleAttribute/RealizacionDiagramEntity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listValues" upperBound="-1"
+          eType="#//entitymodel/Value" containment="true" eOpposite="#//entitymodel/Value/RealizacionDiagramEntity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ElementoRealizacionDiagramEntity">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//entitymodel/TipoModelElementEntity"
+          defaultValueLiteral="entity"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreModelElementEntity"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="modelElementEntity" lowerBound="1"
+          eType="#//entitymodel/ModelElementEntity" eOpposite="#//entitymodel/ModelElementEntity/ElementoRealizacionDiagramEntity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="RealizacionDiagramEntity"
+          eType="#//entitymodel/RealizacionDiagramEntity" transient="true" eOpposite="#//entitymodel/RealizacionDiagramEntity/listElementoRealizacionDiagramEntity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listElementoRealizacionAttribute"
+          upperBound="-1" eType="#//entitymodel/ElementoRealizacionValueAttribute"
+          containment="true" eOpposite="#//entitymodel/ElementoRealizacionValueAttribute/ElementoRealizacionDiagramEntity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="TipoModelElementEntity">
+      <eLiterals name="entity" value="1"/>
+      <eLiterals name="relation" value="2"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="Type">
+      <eLiterals name="string" value="1"/>
+      <eLiterals name="int" value="2"/>
+      <eLiterals name="float" value="3"/>
+      <eLiterals name="date" value="4"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ElementoRealizacionValueAttribute">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valueAttribute" upperBound="-1"
+          eType="#//entitymodel/Attribute" eOpposite="#//entitymodel/Attribute/ElementoRealizacionValueAttribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ElementoRealizacionDiagramEntity"
+          eType="#//entitymodel/ElementoRealizacionDiagramEntity" transient="true"
+          eOpposite="#//entitymodel/ElementoRealizacionDiagramEntity/listElementoRealizacionAttribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+          eType="#//entitymodel/Value" eOpposite="#//entitymodel/Value/ElementoRealizacionValueAttribute"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ElementoRealizacionVisibleAttribute">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="RealizacionDiagramEntity"
+          eType="#//entitymodel/RealizacionDiagramEntity" transient="true" eOpposite="#//entitymodel/RealizacionDiagramEntity/realizacionVisibleAttribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="visibleAttribute" upperBound="-1"
+          eType="#//entitymodel/Attribute" eOpposite="#//entitymodel/Attribute/ElementoRealizacionVisibleAttribute"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Value">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ElementoRealizacionValueAttribute"
+          upperBound="-1" eType="#//entitymodel/ElementoRealizacionValueAttribute"
+          eOpposite="#//entitymodel/ElementoRealizacionValueAttribute/values"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="RealizacionDiagramEntity"
+          eType="#//entitymodel/RealizacionDiagramEntity" transient="true" eOpposite="#//entitymodel/RealizacionDiagramEntity/listValues"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="modeloconsultas" nsURI="http:///gestionmodelosconsultas/modeloconsultas.ecore"
+      nsPrefix="gestionmodelosconsultas.modeloconsultas">
+    <eClassifiers xsi:type="ecore:EClass" name="ModeloConsulta">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="realizacionDiagramEntity"
+          lowerBound="1" eType="#//entitymodel/RealizacionDiagramEntity" containment="true"
+          eOpposite="#//entitymodel/RealizacionDiagramEntity/ModeloConsulta"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="FactoryModeloConsulta"
+          eType="#//modeloconsultas/FactoryModeloConsulta" transient="true" eOpposite="#//modeloconsultas/FactoryModeloConsulta/listModeloConsulta"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listEADiagram" upperBound="-1"
+          eType="#//modeloconsultas/model/EADiagram" containment="true" eOpposite="#//modeloconsultas/model/EADiagram/ModeloConsulta"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listResultado" upperBound="-1"
+          eType="#//modeloconsultas/resultset/Resultado" containment="true" eOpposite="#//modeloconsultas/resultset/Resultado/ModeloConsulta"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FactoryModeloConsulta">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ModelFactory" eType="#//ModelFactory"
+          transient="true" eOpposite="#//ModelFactory/factoryModeloConsultas"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listModeloConsulta" upperBound="-1"
+          eType="#//modeloconsultas/ModeloConsulta" containment="true" eOpposite="#//modeloconsultas/ModeloConsulta/FactoryModeloConsulta"/>
+    </eClassifiers>
+    <eSubpackages name="model" nsURI="http:///gestionmodelosconsultas/modeloconsultas/model.ecore"
+        nsPrefix="gestionmodelosconsultas.modeloconsultas.model">
+      <eClassifiers xsi:type="ecore:EClass" name="Relacion" eSuperTypes="#//modeloconsultas/model/ElementoModelo">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="estereotipo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="EADiagram" eType="#//modeloconsultas/model/EADiagram"
+            transient="true" eOpposite="#//modeloconsultas/model/EADiagram/listRelacion"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+            eType="#//modeloconsultas/model/ElementoConsulta"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+            eType="#//modeloconsultas/model/ElementoConsulta"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Campo">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreCampo" eType="#//modeloconsultas/model/NombreCampo"
+            defaultValueLiteral="default"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="criterio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="seleccion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            defaultValueLiteral="false"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedElementoConsulta"
+            eType="#//modeloconsultas/model/ElementoConsulta" transient="true" eOpposite="#//modeloconsultas/model/ElementoConsulta/listCampos"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="NombreCampo">
+        <eLiterals name="ID" value="1"/>
+        <eLiterals name="ESTADO_TRANSACCION" value="2"/>
+        <eLiterals name="HORA" value="3"/>
+        <eLiterals name="TIPO" value="4"/>
+        <eLiterals name="DESCRIPCION" value="5"/>
+        <eLiterals name="CATEGORIA" value="6"/>
+        <eLiterals name="VALOR" value="7"/>
+        <eLiterals name="CADENA_TRAMA" value="8"/>
+        <eLiterals name="NUMERO_MOVIL" value="9"/>
+        <eLiterals name="FECHA" value="10"/>
+        <eLiterals name="CEDULA_CONDUCTOR" value="11"/>
+        <eLiterals name="CONDUCTOR" value="12"/>
+        <eLiterals name="TOTAL" value="13"/>
+        <eLiterals name="TOTAL_RECAUDO_BRUTO" value="14"/>
+        <eLiterals name="TOTAL_RECAUDO_NETO" value="15"/>
+        <eLiterals name="TOTAL_DEPOSITO" value="16"/>
+        <eLiterals name="TOTAL_GASTOS" value="17"/>
+        <eLiterals name="LIQUIDADO" value="18"/>
+        <eLiterals name="USUARIO" value="19"/>
+        <eLiterals name="NOMBRE_PERSONA" value="20"/>
+        <eLiterals name="APELLIDO" value="21"/>
+        <eLiterals name="CEDULA" value="22"/>
+        <eLiterals name="HORA_MODIFICACION" value="23"/>
+        <eLiterals name="NOMBRE" value="24"/>
+        <eLiterals name="REGISTRO" value="25"/>
+        <eLiterals name="TOTAL_RECAUDO_TARIFA" value="26"/>
+        <eLiterals name="REGISTRO_RECAUDO" value="27"/>
+        <eLiterals name="COSTO_TARIFA" value="28"/>
+        <eLiterals name="RUTA_DESPACHO" value="29"/>
+        <eLiterals name="HORA_DESPACHO" value="30"/>
+        <eLiterals name="REGISTRO_CONSOLIDADO" value="31"/>
+        <eLiterals name="TOTAL_RECAUDO_RUTO" value="32"/>
+        <eLiterals name="TOTAL_RECAUDO_DESPACHO" value="33"/>
+        <eLiterals name="ESTADO_CONSOLIDADO" value="34"/>
+        <eLiterals name="ESTADO_IMPRESION" value="35"/>
+        <eLiterals name="default"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="EADiagram" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="listRelacion" upperBound="-1"
+            eType="#//modeloconsultas/model/Relacion" containment="true" eOpposite="#//modeloconsultas/model/Relacion/EADiagram"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ModeloConsulta" eType="#//modeloconsultas/ModeloConsulta"
+            transient="true" eOpposite="#//modeloconsultas/ModeloConsulta/listEADiagram"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="listElementoConsulta"
+            upperBound="-1" eType="#//modeloconsultas/model/ElementoConsulta" containment="true"
+            eOpposite="#//modeloconsultas/model/ElementoConsulta/EADiagram"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ViewModel" eSuperTypes="#//modeloconsultas/model/EADiagram"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ElementoConsulta" abstract="true"
+          eSuperTypes="#//modeloconsultas/model/ElementoModelo">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="EADiagram" eType="#//modeloconsultas/model/EADiagram"
+            transient="true" eOpposite="#//modeloconsultas/model/EADiagram/listElementoConsulta"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="listCampos" upperBound="-1"
+            eType="#//modeloconsultas/model/Campo" containment="true" eOpposite="#//modeloconsultas/model/Campo/ownedElementoConsulta"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Proyeccion" eSuperTypes="#//modeloconsultas/model/EADiagram"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ElementoModelo">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="from" upperBound="-1"
+            eType="#//modeloconsultas/model/ElementoModelo" eOpposite="#//modeloconsultas/model/ElementoModelo/to"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="to" upperBound="-1"
+            eType="#//modeloconsultas/model/ElementoModelo" eOpposite="#//modeloconsultas/model/ElementoModelo/from"/>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="resultset" nsURI="http:///gestionmodelosconsultas/modeloconsultas/resultset.ecore"
+        nsPrefix="gestionmodelosconsultas.modeloconsultas.resultset">
+      <eClassifiers xsi:type="ecore:EClass" name="Resultado">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ModeloConsulta" eType="#//modeloconsultas/ModeloConsulta"
+            transient="true" eOpposite="#//modeloconsultas/ModeloConsulta/listResultado"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="listResultElement"
+            upperBound="-1" eType="#//modeloconsultas/resultset/ResultElement" containment="true"
+            eOpposite="#//modeloconsultas/resultset/ResultElement/Resultado"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ElementoModeloResultado" abstract="true"
+          eSuperTypes="#//modeloconsultas/resultset/ResultElement">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="listElementoModeloResultado"
+            upperBound="-1" eType="#//modeloconsultas/resultset/ElementoModeloResultado"
+            containment="true" eOpposite="#//modeloconsultas/resultset/ElementoModeloResultado/ElementoModeloResultado"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ElementoModeloResultado"
+            eType="#//modeloconsultas/resultset/ElementoModeloResultado" transient="true"
+            eOpposite="#//modeloconsultas/resultset/ElementoModeloResultado/listElementoModeloResultado"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ResultElement" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="Resultado" eType="#//modeloconsultas/resultset/Resultado"
+            transient="true" eOpposite="#//modeloconsultas/resultset/Resultado/listResultElement"/>
+      </eClassifiers>
+      <eSubpackages name="resultcotracir" nsURI="http:///gestionmodelosconsultas/modeloconsultas/resultset/resultcotracir.ecore"
+          nsPrefix="gestionmodelosconsultas.modeloconsultas.resultset.resultcotracir">
+        <eClassifiers xsi:type="ecore:EClass" name="Transaccion" eSuperTypes="#//modeloconsultas/resultset/ElementoModeloResultado">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="ESTADO_TRANSACCION"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+              defaultValueLiteral="false"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="HORA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="TIPO" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="DESCRIPCION" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="CATEGORIA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="VALOR" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Trama" eSuperTypes="#//modeloconsultas/resultset/ElementoModeloResultado">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="CADENA_TRAMA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Consolidado" eSuperTypes="#//modeloconsultas/resultset/ElementoModeloResultado">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="RUTA_DESPACHO" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="HORA_DESPACHO" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="REGISTRO_CONSOLIDADO"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="TOTAL_RECAUDO_BRUTO"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="TOTAL_RECAUDO_DESPACHO"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="ESTADO_CONSOLIDADO"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="ESTADO_IMPRESION"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Propietario" eSuperTypes="#//modeloconsultas/resultset/ElementoModeloResultado">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="NOMBRE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="CEDULA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="Planilla" eSuperTypes="#//modeloconsultas/resultset/ElementoModeloResultado">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="NUMERO_MOVIL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="FECHA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="CEDULA_CONDUCTOR"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="CONDUCTOR" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="TOTAL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="TOTAL_RECAUDO_BRUTO"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="TOTAL_RECAUDO_NETO"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="TOTAL_DEPOSITO" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="TOTAL_GASTOS" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="LIQUIDADO" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="USUARIO" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="NOMBRE_PERSONA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="APELLIDO" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="CEDULA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="HORA_MODIFICACION"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="NewClass"/>
+        <eClassifiers xsi:type="ecore:EClass" name="Detallado" eSuperTypes="#//modeloconsultas/resultset/ElementoModeloResultado">
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="NOMBRE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="REGISTRO" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="TOTAL_RECAUDO_TARIFA"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="REGISTRO_RECAUDO"
+              eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="COSTO_TARIFA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+        </eClassifiers>
+      </eSubpackages>
+    </eSubpackages>
+    <eSubpackages name="cotracir" nsURI="http:///gestionmodelosconsultas/modeloconsultas/cotracir.ecore"
+        nsPrefix="gestionmodelosconsultas.modeloconsultas.cotracir">
+      <eClassifiers xsi:type="ecore:EClass" name="Planilla" eSuperTypes="#//modeloconsultas/model/ElementoConsulta"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Consolidado" eSuperTypes="#//modeloconsultas/model/ElementoConsulta"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Transaccion" eSuperTypes="#//modeloconsultas/model/ElementoConsulta"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Trama" eSuperTypes="#//modeloconsultas/model/ElementoConsulta"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Propietario" eSuperTypes="#//modeloconsultas/model/ElementoConsulta"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Detallado" eSuperTypes="#//modeloconsultas/model/ElementoConsulta"/>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="datatypes" nsURI="http:///gestionmodelosconsultas/datatypes.ecore"
+      nsPrefix="gestionmodelosconsultas.datatypes">
+    <eClassifiers xsi:type="ecore:EDataType" name="Object" instanceClassName="java.lang.Object"/>
+  </eSubpackages>
+</ecore:EPackage>

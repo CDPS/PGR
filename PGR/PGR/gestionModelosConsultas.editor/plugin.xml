@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated gestionModelosConsultas -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="gestionmodelosconsultas.presentation.GestionmodelosconsultasModelWizardID"
+            name="%_UI_GestionmodelosconsultasModelWizard_label"
+            class="gestionmodelosconsultas.presentation.GestionmodelosconsultasModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GestionmodelosconsultasModelFile.gif">
+         <description>%_UI_GestionmodelosconsultasModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated gestionModelosConsultas -->
+      <editor
+            id="gestionmodelosconsultas.presentation.GestionmodelosconsultasEditorID"
+            name="%_UI_GestionmodelosconsultasEditor_label"
+            icon="icons/full/obj16/GestionmodelosconsultasModelFile.gif"
+            extensions="gestionmodelosconsultas"
+            class="gestionmodelosconsultas.presentation.GestionmodelosconsultasEditor"
+            contributorClass="gestionmodelosconsultas.presentation.GestionmodelosconsultasActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated gestionModelosConsultas -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="gestionmodelosconsultas.rules.factoryrules.presentation.FactoryrulesModelWizardID"
+            name="%_UI_FactoryrulesModelWizard_label"
+            class="gestionmodelosconsultas.rules.factoryrules.presentation.FactoryrulesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/FactoryrulesModelFile.gif">
+         <description>%_UI_FactoryrulesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated gestionModelosConsultas -->
+      <editor
+            id="gestionmodelosconsultas.rules.factoryrules.presentation.FactoryrulesEditorID"
+            name="%_UI_FactoryrulesEditor_label"
+            icon="icons/full/obj16/FactoryrulesModelFile.gif"
+            extensions="factoryrules"
+            class="gestionmodelosconsultas.rules.factoryrules.presentation.FactoryrulesEditor"
+            contributorClass="gestionmodelosconsultas.rules.factoryrules.presentation.FactoryrulesActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated gestionModelosConsultas -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="gestionmodelosconsultas.entitymodel.presentation.EntitymodelModelWizardID"
+            name="%_UI_EntitymodelModelWizard_label"
+            class="gestionmodelosconsultas.entitymodel.presentation.EntitymodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/EntitymodelModelFile.gif">
+         <description>%_UI_EntitymodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated gestionModelosConsultas -->
+      <editor
+            id="gestionmodelosconsultas.entitymodel.presentation.EntitymodelEditorID"
+            name="%_UI_EntitymodelEditor_label"
+            icon="icons/full/obj16/EntitymodelModelFile.gif"
+            extensions="entitymodel"
+            class="gestionmodelosconsultas.entitymodel.presentation.EntitymodelEditor"
+            contributorClass="gestionmodelosconsultas.entitymodel.presentation.EntitymodelActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated gestionModelosConsultas -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="gestionmodelosconsultas.modeloconsultas.presentation.ModeloconsultasModelWizardID"
+            name="%_UI_ModeloconsultasModelWizard_label"
+            class="gestionmodelosconsultas.modeloconsultas.presentation.ModeloconsultasModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ModeloconsultasModelFile.gif">
+         <description>%_UI_ModeloconsultasModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated gestionModelosConsultas -->
+      <editor
+            id="gestionmodelosconsultas.modeloconsultas.presentation.ModeloconsultasEditorID"
+            name="%_UI_ModeloconsultasEditor_label"
+            icon="icons/full/obj16/ModeloconsultasModelFile.gif"
+            extensions="modeloconsultas"
+            class="gestionmodelosconsultas.modeloconsultas.presentation.ModeloconsultasEditor"
+            contributorClass="gestionmodelosconsultas.modeloconsultas.presentation.ModeloconsultasActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated gestionModelosConsultas -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="gestionmodelosconsultas.modeloconsultas.model.presentation.ModelModelWizardID"
+            name="%_UI_ModelModelWizard_label"
+            class="gestionmodelosconsultas.modeloconsultas.model.presentation.ModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ModelModelFile.gif">
+         <description>%_UI_ModelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated gestionModelosConsultas -->
+      <editor
+            id="gestionmodelosconsultas.modeloconsultas.model.presentation.ModelEditorID"
+            name="%_UI_ModelEditor_label"
+            icon="icons/full/obj16/ModelModelFile.gif"
+            extensions="model"
+            class="gestionmodelosconsultas.modeloconsultas.model.presentation.ModelEditor"
+            contributorClass="gestionmodelosconsultas.modeloconsultas.model.presentation.ModelActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated gestionModelosConsultas -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="gestionmodelosconsultas.modeloconsultas.resultset.presentation.ResultsetModelWizardID"
+            name="%_UI_ResultsetModelWizard_label"
+            class="gestionmodelosconsultas.modeloconsultas.resultset.presentation.ResultsetModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ResultsetModelFile.gif">
+         <description>%_UI_ResultsetModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated gestionModelosConsultas -->
+      <editor
+            id="gestionmodelosconsultas.modeloconsultas.resultset.presentation.ResultsetEditorID"
+            name="%_UI_ResultsetEditor_label"
+            icon="icons/full/obj16/ResultsetModelFile.gif"
+            extensions="resultset"
+            class="gestionmodelosconsultas.modeloconsultas.resultset.presentation.ResultsetEditor"
+            contributorClass="gestionmodelosconsultas.modeloconsultas.resultset.presentation.ResultsetActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated gestionModelosConsultas -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="gestionmodelosconsultas.modeloconsultas.resultset.resultcotracir.presentation.ResultcotracirModelWizardID"
+            name="%_UI_ResultcotracirModelWizard_label"
+            class="gestionmodelosconsultas.modeloconsultas.resultset.resultcotracir.presentation.ResultcotracirModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ResultcotracirModelFile.gif">
+         <description>%_UI_ResultcotracirModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated gestionModelosConsultas -->
+      <editor
+            id="gestionmodelosconsultas.modeloconsultas.resultset.resultcotracir.presentation.ResultcotracirEditorID"
+            name="%_UI_ResultcotracirEditor_label"
+            icon="icons/full/obj16/ResultcotracirModelFile.gif"
+            extensions="resultcotracir"
+            class="gestionmodelosconsultas.modeloconsultas.resultset.resultcotracir.presentation.ResultcotracirEditor"
+            contributorClass="gestionmodelosconsultas.modeloconsultas.resultset.resultcotracir.presentation.ResultcotracirActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated gestionModelosConsultas -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="gestionmodelosconsultas.modeloconsultas.cotracir.presentation.CotracirModelWizardID"
+            name="%_UI_CotracirModelWizard_label"
+            class="gestionmodelosconsultas.modeloconsultas.cotracir.presentation.CotracirModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CotracirModelFile.gif">
+         <description>%_UI_CotracirModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated gestionModelosConsultas -->
+      <editor
+            id="gestionmodelosconsultas.modeloconsultas.cotracir.presentation.CotracirEditorID"
+            name="%_UI_CotracirEditor_label"
+            icon="icons/full/obj16/CotracirModelFile.gif"
+            extensions="cotracir"
+            class="gestionmodelosconsultas.modeloconsultas.cotracir.presentation.CotracirEditor"
+            contributorClass="gestionmodelosconsultas.modeloconsultas.cotracir.presentation.CotracirActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

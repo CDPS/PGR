@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sensormodule_example.collectionmodule.enterprise.recaudo="http:///sensormodule_example/collectionmodule/enterprise/recaudo.ecore" xmlns:sensormodule_example.modeloconsultas.model="http:///sensormodule_example/modeloconsultas/model.ecore" xsi:schemaLocation="http:///sensormodule_example/collectionmodule/enterprise/recaudo.ecore http:///sensormodule_example.ecore#//collectionmodule/enterprise/recaudo http:///sensormodule_example/modeloconsultas/model.ecore http:///sensormodule_example.ecore#//modeloconsultas/model" xmi:id="_TiSbMD6kEeesYYyNesiCNg" type="Sensormodule_example" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="__48LID6lEeemSYL74YBBxw" type="2002" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="__48LIj6lEeemSYL74YBBxw" type="5004"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="__48LIz6lEeemSYL74YBBxw" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="__48LJD6lEeemSYL74YBBxw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__48LJT6lEeemSYL74YBBxw"/>
+    </children>
+    <element xmi:type="sensormodule_example.collectionmodule.enterprise.recaudo:PlanillaRecaudo" href="My.sensormodule_example#//@listModeloConsulta.0/@listEADiagram.0/@listElementoConsulta.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__48LIT6lEeemSYL74YBBxw" x="124" y="90"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_AeDDUD6mEeemSYL74YBBxw" type="2001" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_AeDDUj6mEeemSYL74YBBxw" type="5002"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_AeDDUz6mEeemSYL74YBBxw" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AeDDVD6mEeemSYL74YBBxw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AeMNQD6mEeemSYL74YBBxw"/>
+    </children>
+    <element xmi:type="sensormodule_example.collectionmodule.enterprise.recaudo:RecaudoDiario" href="My.sensormodule_example#//@listModeloConsulta.0/@listEADiagram.0/@listElementoConsulta.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AeDDUT6mEeemSYL74YBBxw" x="447" y="65"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_TiSbMT6kEeesYYyNesiCNg"/>
+  <element xmi:type="sensormodule_example.modeloconsultas.model:Proyeccion" href="My.sensormodule_example#//@listModeloConsulta.0/@listEADiagram.0"/>
+</notation:Diagram>

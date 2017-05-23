@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pgr:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pgr="http:///pgr.ecore">
+  <theDomain theUI="//@theUI">
+    <listReport filePath="C:\Users\admin\Desktop\Pruebas Ciclo de Vida\Prueba\Actores.xlsx" fileName="Actores.xlsx"/>
+    <listReport filePath="C:/Users/admin/Desktop/Pruebas Ciclo de Vida/Prueba 3 filtros/Reporte Documentos (2).xlsx" fileName="Reporte Documentos (2).xlsx"/>
+    <listReport filePath="C:/Users/admin/Desktop/Pruebas Ciclo de Vida/Prueba 3 filtros/Reporte Documentos.xlsx" fileName="Reporte Documentos.xlsx"/>
+    <listReport filePath="C:/Users/admin/Desktop/Prueba de concepto/Prueba de concepto.xlsx" fileName="Prueba de concepto.xlsx"/>
+    <listReport filePath="C:/Users/admin/Desktop/cootracir.xlsx" fileName="cootracir.xlsx"/>
+  </theDomain>
+  <theUI theDomain="//@theDomain">
+    <theReportView>
+      <listReportViewModel name="Actores.xlsx"/>
+      <listReportViewModel name="Reporte Documentos (2).xlsx"/>
+      <listReportViewModel name="Reporte Documentos.xlsx"/>
+      <listReportViewModel name="Prueba de concepto.xlsx"/>
+      <listReportViewModel name="cootracir.xlsx"/>
+    </theReportView>
+  </theUI>
+</pgr:ModelFactory>

@@ -1,0 +1,7 @@
+# Tracing options for the gestionModelosConsultas.diagram plug-in
+
+# Common issues
+gestionModelosConsultas.diagram/debug=false
+
+# Visual IDs
+gestionModelosConsultas.diagram/debug/visualID=false

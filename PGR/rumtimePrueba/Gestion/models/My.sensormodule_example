@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sensormodule_example:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sensormodule_example="http:///sensormodule_example.ecore" xmlns:sensormodule_example.collectionmodule.enterprise.recaudo="http:///sensormodule_example/collectionmodule/enterprise/recaudo.ecore" xmlns:sensormodule_example.modeloconsultas.model="http:///sensormodule_example/modeloconsultas/model.ecore">
+  <listModeloConsulta>
+    <listEADiagram xsi:type="sensormodule_example.modeloconsultas.model:Proyeccion">
+      <listElementoConsulta xsi:type="sensormodule_example.collectionmodule.enterprise.recaudo:PlanillaRecaudo"/>
+      <listElementoConsulta xsi:type="sensormodule_example.collectionmodule.enterprise.recaudo:RecaudoDiario"/>
+    </listEADiagram>
+  </listModeloConsulta>
+</sensormodule_example:ModelFactory>
